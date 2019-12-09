@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #board{
+        position: absolute;
+        top:85px;
+        left:100px;
+        border: 2px solid black;
+        height:700px;
+        width:700px;
+        }
+            </style>
+        <script>
+            var opened;
+         var openGreen = true;
+         var openBlue =  true;
+        var turn = true;
+        var player;
+function rollDice()  { 
+    document.getElementById('dice').src="/home/com42/Desktop/Manju/dice.gif";
+    if(turn)
+    {
+        player="Green";
+    div = document.getElementById('E');
+    if(div.style.left==="120px"){
+        openGreen= true;
+    }
+    opened=openGreen;
+    px="40px";
+    turn=false;
+    } else{
+        player = "Blue";
+        div = document.getElementById('D'); 
+        if(div.style.left==="120px"){
+        openBlue= true;
+    }
+        opened=openBlue;  
+        px="50px";
+        turn=true;    
+    } 
+if(div.style.left==="120px" && div.style.top==="100px"){
+               alert('Player1 Won');
+                window.location.reload(true);
+           }
+           else if(div.style.left==="120px" && div.style.top==="100px"){
+               alert('Player2 Won');
+                window.location.reload(true);
+           }
+           else{
+        const max = 6;
+        const num =Math.ceil(Math.random()*max);
+        alert(player +" get");
+            console.log(player +" get "+num);
+        if(num===1){
+            setTimeout(function gif(){
+            document.getElementById('dice').src="/home/com42/Desktop/Manju/one.png";
+        },500);
+        }
+        else if(num===2){
+            setTimeout(function gif(){
+            document.getElementById('dice').src="/home/com42/Desktop/Manju/two.png";
+        },500);
+        }
+        else if(num===3){
+            setTimeout(function gif(){
+            document.getElementById('dice').src="/home/com42/Desktop/Manju/three.png";
+        },500);
+        }
+        else if(num===4){
+            setTimeout(function gif(){
+            document.getElementById('dice').src="/home/com42/Desktop/Manju/four.png";
+        },500);
+        }
+        else if(num===5){
+            setTimeout(function gif(){
+            document.getElementById('dice').src="/home/com42/Desktop/Manju/five.png";
+        },500);
+        }
+        else if(num===6){
+            setTimeout(function gif(){
+            document.getElementById('dice').src="/home/com42/Desktop/Manju/six.png";
+        },500);
+        } 
+         if(num===6 && opened===true){
+        turn = !turn;
+                    setTimeout(function gif(){
+                        document.getElementById('dice').src="/home/com42/Desktop/Manju/six.png";
+                    },500);
+                console.log('One more chance');
+                rollDice();
+                }
+    if(num===6 && (div.style.left==="50px") && div.style.top==="685px"){
+        div.style.left="120px";
+        div.style.top==="685px";
+    }
+    if(num===6 && (div.style.left==="40px") && div.style.top==="685px"){
+        div.style.left="120px";
+        div.style.top==="685px";
+    }
+    if(opened){
+     setTimeout(function main(){
+                 if(div.style.top==="100px" && div.style.left<="540px"){
+                 if((parseInt(div.style.left) - (num*70)+"px")<"120px"){
+                     break;
+                 }
+                }
+                 else{
+                    if(div.style.top==="100px" && ((div.style.left==="540px" && num===6) || (div.style.left==="470px" && num===5) || (div.style.left==="400px" && num===4)||(div.style.left==="330px" && num===3) || (div.style.left==="260px" && num===2) || (div.style.left==="190px" && num===1))){
+                            div.style.left="120px";div.style.top="100px";
+                    }
+                else if(( div.style.top==="685px" || div.style.top==="555px" || div.style.top==="425px"|| div.style.top==="295px" || div.style.top==="165px")&& div.style.left<"750px"){
+                div.style.left = parseInt(div.style.left) + 70 + "px";
+                //console.log((parseInt(div.style.left) - (num*70)+"px"));
+                
+                }
+                else if((div.style.top=="685px" || div.style.top==="555px" || div.style.top==="425px" || div.style.top==="295px" || div.style.top==="165px")&& div.style.left==="750px"){
+                div.style.top = parseInt(div.style.top) - 65 + "px";
+                }
+
+                else if((div.style.top==="620px" || div.style.top==="490px" || div.style.top==="360px" || div.style.top==="230px" || div.style.top==="100px")&& div.style.left>"120px"){
+                    div.style.left = parseInt(div.style.left) - 70 + "px";
+                }
+                else if((div.style.top==="620px" || div.style.top==="490px" || div.style.top==="360px" || div.style.top==="230px") && div.style.left==="120px"){
+                    div.style.top = parseInt(div.style.top) - 65 + "px";
+                }
+            }   
+        
+//         if(div.style.top==="100px" && div.style.left==="330px"){
+// div.style.top="165px"; div.style.left="540px";
+// }
+// else if(div.style.top==="360px" && div.style.left==="330px"){
+// div.style.top="230px"; div.style.left="400px";
+// }
+// else if(div.style.top==="360px" && div.style.left==="400px"){
+// div.style.top="685px"; div.style.left="120px";
+// }
+// else if(div.style.top==="100px" && div.style.left==="680px"){
+// div.style.top="555px"; div.style.left="400px";
+// }
+// else if(div.style.top==="165px" && div.style.left==="610px"){
+// div.style.top="100px"; div.style.left="750px";
+// }
+// else if(div.style.top==="165px" && div.style.left==="120px"){
+// div.style.top="100px"; div.style.left="260px";
+// }
+// else if(div.style.top==="165px" && div.style.left==="260px"){
+// div.style.top="425px"; div.style.left="400px";
+// }
+// else if(div.style.top==="230px" && div.style.left==="610px"){
+// div.style.top="165px"; div.style.left="470px"; 
+// }
+// else if(div.style.top==="360px" && div.style.left==="120px"){
+// div.style.top="555px"; div.style.left="260px";
+// }
+// else if(div.style.top==="295px" && div.style.left==="120px"){
+// div.style.top="230px"; div.style.left="260px";
+// }
+// else if(div.style.top==="360px" && div.style.left==="750px"){
+// div.style.top="685px"; div.style.left="470px"; 
+// }
+// else if(div.style.top==="360px" && div.style.left==="540px"){
+// div.style.top="490px"; div.style.left="400px"; 
+// }
+// else if(div.style.top==="425px" && div.style.left==="680px"){
+// div.style.top="295px"; div.style.left="540px"; 
+// }
+// else if(div.style.top==="685px" && div.style.left==="260px"){
+// div.style.top="620px"; div.style.left="120px"; 
+// }
+// else if(div.style.top==="685px" && div.style.left==="610px"){
+// div.style.top="685px"; div.style.left="330px"; 
+// }
+// else if(div.style.top==="165px" && div.style.left==="750px"){
+// div.style.top="425px"; div.style.left="610px"; 
+// }
+// else if(div.style.top==="620px" && div.style.left==="750px"){
+//     div.style.top="555px";    div.style.left="610px"; 
+// }
+// else if(div.style.top==="685px" && div.style.left==="470px"){
+// div.style.top="620px"; div.style.left="540px"; 
+// }
+// else if(div.style.top==="555px" && div.style.left==="190px"){
+//     div.style.top="490px";    div.style.left="330px";
+// }
+// else if(div.style.top==="555px" && div.style.left==="470px"){
+//     div.style.top="685px";    div.style.left="750px"; 
+//    }
+// else if(div.style.top==="620px" && div.style.left==="330px"){
+//     div.style.top="230px";    div.style.left="540px"; 
+//     }
+// else if(div.style.top==="620px" && div.style.left==="470px"){
+//     div.style.top="490px";    div.style.left="540px"; 
+// }
+// else if(div.style.top==="490px" && div.style.left==="260px"){
+// div.style.top="360px"; div.style.left="190px"; 
+// }
+// else if(div.style.top==="165px" && div.style.left==="400px"){
+// div.style.top="360px";div.style.left="190px";
+// }
+// else if(div.style.top==="490px" && div.style.left==="190px"){
+// div.style.top="685px"; div.style.left="400px";
+// }
+// else if(div.style.top==="620px" && div.style.left==="260px"){
+// div.style.top="685px"; div.style.left="120px";
+// }
+// else if(div.style.top==="230px" && div.style.left==="470px"){
+// div.style.top="555px"; div.style.left="610px";
+// }
+// else if(div.style.top==="100px" && div.style.left==="190px"){
+// div.style.top="295px"; div.style.left="260px";
+// }
+},500);
+    }
+    }
+}
+            </script>
+    </head>
+    <body>
+                    <br><br><br><br><br><br>
+                            <button style="float:right;" onclick=rollDice()>Roll<br> Dice</button><br><br><br>
+                            <br>
+                            <div style="float:right;">
+                            <img id="dice" style="height:150px;width:150px;"></div>
+                     <div id=board><img src="/home/com42/Desktop/Manju/413056.jpg" height="100%" width="100%";></div>
+                                         <div id="D" style="border: 5px solid black;border-radius:50px; background-color: blue; width: 30px; height: 30px; position: absolute; top: 100px; left: 260px; right:100px;bottom:100px;"></div>
+                                            <div id="E" style="border: 5px solid black;border-radius:50px; background-color: greenyellow; width: 30px; height: 30px; position: absolute; top: 100px; left: 190px; right:100px;bottom:100px;"></div>
+    </body>
+</html>

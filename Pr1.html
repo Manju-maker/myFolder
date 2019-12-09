@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #board{
+        position: absolute;
+        top:85px;
+        left:100px;
+        border: 2px solid black;
+        height:700px;
+        width:700px;;
+}
+
+
+            </style>
+        <script>
+           var dice= 0;
+var reload = 0;
+
+var countSix=0;
+var count1  =0;
+var count=count1;
+var n = 0;
+var six=0;
+var P2count1  =0;
+var P2count=P2count1;
+var P2n = 0;
+var P2six=0;
+function rollDice()  {  //setTimeout(function(){ alert("Hello"); }, 3000);
+   
+    document.getElementById('dice').src="/home/com42/Desktop/Manju/dice.gif";
+   
+if(count>=99){
+               alert('Player1 Won');
+               if(reload>0){
+                window.location.reload(true);
+               }
+           }
+           else if(P2count>=99){
+               alert('Player2 Won');
+               if(reload>0){
+                window.location.reload(true);
+               }
+
+           }
+           else{
+if(dice%2==0){
+const max = 6;
+const num =Math.ceil(Math.random()*max);
+// if(num===1){
+//  document.getElementById('1');       
+// }
+alert('Player1 get');
+if(num===1){
+    setTimeout(function gif(){
+    document.getElementById('dice').src="/home/com42/Desktop/Manju/one.png";
+},500);
+}
+else if(num===2){
+    setTimeout(function gif(){
+    document.getElementById('dice').src="/home/com42/Desktop/Manju/two.png";
+},500);
+}
+else if(num===3){
+    setTimeout(function gif(){
+    document.getElementById('dice').src="/home/com42/Desktop/Manju/three.png";
+},500);
+}
+else if(num===4){
+    setTimeout(function gif(){
+    document.getElementById('dice').src="/home/com42/Desktop/Manju/four.png";
+},500);
+}
+else if(num===5){
+    setTimeout(function gif(){
+    document.getElementById('dice').src="/home/com42/Desktop/Manju/five.png";
+},500);
+}
+else if(num===6){
+    setTimeout(function gif(){
+    document.getElementById('dice').src="/home/com42/Desktop/Manju/six.png";
+},500);
+} 
+console.log('{');
+console.log('Player1 get = '+num);
+dice++;
+
+count1 = count1 + num;
+n= num;
+if(num===6 && count>0 && count<93){
+    setTimeout(function gif(){
+        document.getElementById('dice').src="/home/com42/Desktop/Manju/six.png";
+    },500);
+    dice=0;
+console.log('One more chance');
+rollDice();
+
+}
+
+console.log("after num, count1="+count1);
+div = document.getElementById('D');
+//console.log("before iteration= count"+count)
+
+if(n===6 && div.style.left==="50px" && div.style.top==="685px"){
+    setTimeout(function gif(){
+        document.getElementById('dice').src="/home/com42/Desktop/Manju/six.png";
+    },500);
+//console.log("Player1 Entered");
+six = six + 1;
+div.style.left="120px";
+div.style.top==="685px";
+count1=0;
+dice=0;
+rollDice();
+
+
+}
+setTimeout(function main(){
+
+if(six===1){
+//while(div.style.left!=="100px" && div.style.top!=="120p
+for( count=count;count<count1;count++){
+
+
+
+if(count<=9){
+    
+
+if(div.style.left<"720px" && div.style.top==="685px"){
+div.style.left = parseInt(div.style.left) + 70 + "px";
+console.log(div.style.left);
+}
+else if(div.style.top=="685px" && div.style.left==="750px"){
+div.style.top = parseInt(div.style.top) - 65 + "px";
+console.log("!"+count);
+
+}
+
+
+}
+
+
+else if(count>9 && count <20){
+
+ if(div.style.top==="620px" && div.style.left>"120px"){
+    div.style.left = parseInt(div.style.left) - 70 + "px";
+    
+}
+else if(div.style.top==="620px" && div.style.left==="120px"){
+    div.style.top = parseInt(div.style.top) - 65 + "px";
+   
+    
+}
+
+
+}
+
+
+
+else if(count>19 && count<30){
+
+if(div.style.left<"720px" && div.style.top==="555px"){
+div.style.left = parseInt(div.style.left) + 70 + "px";
+
+}
+else{
+    div.style.top = parseInt(div.style.top) - 65 + "px";
+   
+    
+}
+
+
+}
+else if(count>29 && count <40){
+if(div.style.top==="490px" && div.style.left>"120px"){
+   div.style.left = parseInt(div.style.left) - 70 + "px";
+   
+}
+else{
+   div.style.top = parseInt(div.style.top) - 65 + "px";
+  
+   
+}
+
+
+
+}
+else if(count>39 && count<50){
+
+
+if(div.style.left<"720px" && div.style.top==="425px"){
+div.style.left = parseInt(div.style.left) + 70 + "px";
+
+}
+else{
+div.style.top = parseInt(div.style.top) - 65 + "px";
+
+
+}
+
+
+
+}
+else if(count>49 && count <60){
+
+
+if(div.style.top==="360px" && div.style.left>"120px"){
+div.style.left = parseInt(div.style.left) - 70 + "px";
+
+}
+else{
+div.style.top = parseInt(div.style.top) - 65 + "px";
+}
+
+}
+else if(count>59 && count<70){
+
+
+if(div.style.left<"720px" && div.style.top==="295px"){
+div.style.left = parseInt(div.style.left) + 70 + "px";
+
+}
+else{
+div.style.top = parseInt(div.style.top) - 65 + "px";
+
+
+}
+
+
+
+
+}
+else if(count>69 && count <80){
+if(div.style.top==="230px" && div.style.left>"120px"){
+div.style.left = parseInt(div.style.left) - 70 + "px";
+
+}
+else{
+div.style.top = parseInt(div.style.top) - 65 + "px";
+
+
+}
+
+
+}
+else if(count>79 && count<90){
+
+if(div.style.left<"720px" && div.style.top==="165px"){
+div.style.left = parseInt(div.style.left) + 70 + "px";
+
+}
+else{
+div.style.top = parseInt(div.style.top) - 65 + "px";
+
+}
+
+}
+else if(count>89 && count <93){
+if(div.style.top==="100px" && div.style.left>"120px"){
+div.style.left = parseInt(div.style.left) - 70 + "px";
+
+
+}
+
+}
+
+else if(count>=93 && count<=99){
+if(div.style.top==="100px" && div.style.left>"120px" && count1<=99 ){
+div.style.left = parseInt(div.style.left) - 70 + "px";
+}
+else if(count1===99){
+div.style.left="120px";
+div.style.top="100px";
+}
+else{
+count1 = count1-num;
+count = count1;
+}
+
+}
+}
+//count = count1;
+console.log("After 1 iteration count="+count+" count1 ="+count1);
+
+//  if(div.style.top==="100px" && div.style.left>"540px"){
+//      if(count===94 )
+//  }
+if(count1===count){
+if(count===96){
+div.style.top="165px";
+div.style.left="540px";
+count = 86;
+count1= 86;
+}
+else if(count===56){
+div.style.top="230px";
+div.style.left="400px";
+count =75;
+count1 = 75;
+}
+else if(count===55){
+div.style.top="685px";
+div.style.left="120px";
+count = 0;
+count1 = 0;
+}
+else if(count===91){
+div.style.top="555px";
+div.style.left="400px";
+count = 24;
+count1 = 24;
+}
+else if(count===87){
+div.style.top="100px";
+div.style.left="750px";
+count = 90;
+count1 = 90;
+}
+else if(count===80){
+div.style.top="100px";
+div.style.left="260px";
+count = 97;
+count1 = 97;
+}
+
+else if(count===82){
+div.style.top="425px";
+div.style.left="400px";
+count = 44;
+count1 = 44;
+}
+else if(count===72){
+div.style.top="165px";
+div.style.left="470px"; 
+count = 85;
+count1 = 85;
+}
+
+else if(count===59){
+div.style.top="555px";
+div.style.left="260px";
+count = 22;
+count1 = 22;
+
+}
+else if(count===60){
+div.style.top="230px";
+div.style.left="260px";
+count = 77;
+count1 = 77;
+}
+
+
+else if(count===50){
+div.style.top="685px";
+div.style.left="470px"; 
+count = 5;
+count1 = 5;
+}
+
+else if(count===53){
+div.style.top="490px";
+div.style.left="400px"; 
+count = 35;
+count1 = 35;
+}
+
+else if(count===48){
+div.style.top="295px";
+div.style.left="540px"; 
+count = 66;
+count1 = 66;
+}
+
+else if(count===2){
+div.style.top="620px";
+div.style.left="120px"; 
+count = 19;
+count1=19;
+}
+else if(count===7){
+div.style.top="685px";
+div.style.left="330px"; 
+count = 3;
+count1 = 3;
+}
+
+else if(count===89){
+div.style.top="425px";
+div.style.left="610px"; 
+count = 47;
+count1 = 47;
+}
+
+
+else if(count===10){
+    div.style.top="555px";
+    div.style.left="610px"; 
+    count = 27;
+    count1 = 27;
+}
+
+else if(count===5){
+div.style.top="620px";
+div.style.left="540px"; 
+count = 13;
+count1 = 13;
+
+}
+else if(count===21){
+    div.style.top="490px";
+    div.style.left="330px"; 
+    count = 36;
+    count1 = 36;
+}
+
+else if(count===25){
+    div.style.top="685px";
+    div.style.left="750px"; 
+    count = 9;
+    count1 = 9;
+}
+else if(count===16){
+    div.style.top="230px";
+    div.style.left="540px"; 
+    count = 73;
+    count1 = 73;
+}
+else if(count===14){
+    div.style.top="490px";
+    div.style.left="540px"; 
+    count = 33;
+    count1 = 33;
+}
+else if(count===37){
+div.style.toUnapprovedp="360px";
+div.style.left="190px"; 
+count = 58;
+count1 = 58;
+}
+
+else if(count===84){
+div.style.top="360px";
+div.style.left="190px"; 
+count = 58;
+count1 = 58;
+}
+
+else if(count===38){
+div.style.top="685px";
+div.style.left="400px";
+count = 4;
+count1 = 4;
+}
+
+else if(count===17){
+div.style.top="685px";
+div.style.left="120px";
+count = 0;
+count1 = 0;
+}
+else if(count===74){
+div.style.top="555px";
+div.style.left="610px";
+count =27;
+count1 = 27;
+}
+else if(count===98){
+div.style.top="295px";
+div.style.left="260px";
+count =62;
+count1 = 62;
+}
+
+
+
+
+}
+if(count===P2count && P2count>0){
+console.log('P1 cuuuttttttttttttttt P2');
+div1.style.top="685px";
+div1.style.left="40px";
+P2six=0;
+P2count=0;
+P2count1=0;
+}
+
+
+}
+
+},1500);
+console.log('}');
+}
+else if(dice%2!=0){
+   
+
+   const P2max = 6;
+   const P2num =Math.ceil(Math.random()*P2max);
+   console.log('{');
+   alert('Player2 get ');
+   if(P2num===1){
+       setTimeout(function gif(){
+    document.getElementById('dice').src="/home/com42/Desktop/Manju/one.png";
+},500);
+}
+else if(P2num===2){
+    setTimeout(function gif(){
+    document.getElementById('dice').src="/home/com42/Desktop/Manju/two.png";
+},500);
+}
+else if(P2num===3){
+    setTimeout(function gif(){
+    document.getElementById('dice').src="/home/com42/Desktop/Manju/three.png";
+},500);
+}
+else if(P2num===4){
+    setTimeout(function gif(){
+    document.getElementById('dice').src="/home/com42/Desktop/Manju/four.png";
+},500);
+}
+else if(P2num===5){
+    setTimeout(function gif(){
+    document.getElementById('dice').src="/home/com42/Desktop/Manju/five.png";
+},500);
+}
+else if(P2num===6){
+    setTimeout(function gif(){
+    document.getElementById('dice').src="/home/com42/Desktop/Manju/six.png";
+},500);
+} 
+   console.log('Player2 get = '+P2num);
+   dice++;
+   P2count1 = P2count1 + P2num;
+   P2n= P2num;
+   if(P2num===6 && P2count >0 && P2count<93){
+    setTimeout(function gif(){
+        document.getElementById('dice').src="/home/com42/Desktop/Manju/six.png";
+    },500);
+    console.log('One more chance');
+       dice=1;
+       setTimeout(function gif(){
+       rollDice();
+    },500);
+   }
+   console.log("after num, P2count1="+P2count1);
+  div1 = document.getElementById('E');
+       //console.log("before iteration= P2count"+P2count)
+
+       if(P2n===6 && div1.style.left==="40px" && div1.style.top==="685px"){
+        setTimeout(function gif(){
+            document.getElementById('dice').src="/home/com42/Desktop/Manju/six.png";
+        },500);
+   //console.log("Player2 Entered");
+   P2six = P2six + 1;
+   div1.style.left="120px";
+   div1.style.top==="685px";
+   P2count1=0;
+   dice=1;
+rollDice();
+
+
+       }
+
+       setTimeout(function main(){
+       if(P2six===1){
+       //while(div.style.left!=="100px" && div.style.top!=="120p
+       for( P2count=P2count;P2count<P2count1;P2count++){
+
+       
+           if(P2count<=9){
+               
+       
+       if(div1.style.left<"720px" && div1.style.top==="685px"){
+       div1.style.left = parseInt(div1.style.left) + 70 + "px";
+       //console.log(div.style.left);
+       }
+       else if(div1.style.top=="685px" && div1.style.left==="750px"){
+           div1.style.top = parseInt(div1.style.top) - 65 + "px";
+          
+           
+       }
+       
+       
+   }
+   
+   
+       else if(P2count>9 && P2count <20){
+           
+            if(div1.style.top==="620px" && div1.style.left>"120px"){
+               div1.style.left = parseInt(div1.style.left) - 70 + "px";
+               
+           }
+           else if(div1.style.top==="620px" && div1.style.left==="120px"){
+               div1.style.top = parseInt(div1.style.top) - 65 + "px";
+              
+               
+           }
+          
+
+       }
+   
+           
+      
+      else if(P2count>19 && P2count<30){
+       
+           if(div1.style.left<"720px" && div1.style.top==="555px"){
+           div1.style.left = parseInt(div1.style.left) + 70 + "px";
+           
+           }
+           else{
+               div1.style.top = parseInt(div1.style.top) - 65 + "px";
+              
+               
+           }
+           
+          
+       }
+       else if(P2count>29 && P2count <40){
+           if(div1.style.top==="490px" && div1.style.left>"120px"){
+              div1.style.left = parseInt(div1.style.left) - 70 + "px";
+              
+          }
+          else{
+              div1.style.top = parseInt(div1.style.top) - 65 + "px";
+             
+              
+          }
+      
+         
+
+      }
+      else if(P2count>39 && P2count<50){
+       
+       
+       if(div1.style.left<"720px" && div1.style.top==="425px"){
+       div1.style.left = parseInt(div1.style.left) + 70 + "px";
+       
+       }
+       else{
+           div1.style.top = parseInt(div1.style.top) - 65 + "px";
+         
+           
+       }
+      
+      
+       
+   }
+   else if(P2count>49 && P2count <60){
+       
+
+       if(div1.style.top==="360px" && div1.style.left>"120px"){
+          div1.style.left = parseInt(div1.style.left) - 70 + "px";
+          
+      }
+      else{
+          div1.style.top = parseInt(div1.style.top) - 65 + "px";
+      }
+
+  }
+  else if(P2count>59 && P2count<70){
+  
+       
+   if(div1.style.left<"720px" && div1.style.top==="295px"){
+   div1.style.left = parseInt(div1.style.left) + 70 + "px";
+   
+   }
+   else{
+       div1.style.top = parseInt(div1.style.top) - 65 + "px";
+      
+       
+   }
+   
+
+   
+   
+   }
+   else if(P2count>69 && P2count <80){
+   if(div1.style.top==="230px" && div1.style.left>"120px"){
+      div1.style.left = parseInt(div1.style.left) - 70 + "px";
+      
+  }
+  else{
+      div1.style.top = parseInt(div1.style.top) - 65 + "px";
+
+      
+  }
+ 
+
+   }
+   else if(P2count>79 && P2count<90){
+       
+   if(div1.style.left<"720px" && div1.style.top==="165px"){
+   div1.style.left = parseInt(div1.style.left) + 70 + "px";
+   
+   }
+   else{
+       div1.style.top = parseInt(div1.style.top) - 65 + "px";
+      
+   }
+   
+   }
+   else if(P2count>89 && P2count <93){
+   if(div1.style.top==="100px" && div1.style.left>"120px"){
+      div1.style.left = parseInt(div1.style.left) - 70 + "px";
+       }
+  
+   }
+
+   else if(P2count>=93 && P2count<=99){
+if(div1.style.top==="100px" && div1.style.left>"120px" && P2count1<=99 ){
+div1.style.left = parseInt(div1.style.left) - 70 + "px";
+}
+else if(P2count1===99){
+div1.style.left="120px";
+div1.style.top="100px";
+}
+else{
+P2count1 = P2count1-P2num;
+P2count = P2count1;
+}
+
+}
+   
+       }
+       
+       
+}
+   //console.log(P2count1+" "+P2count);
+//count = count1;
+console.log("After 1 iteration P2count="+P2count+" count1 ="+P2count1);
+//  if(div.style.top==="100px" && div.style.left>"540px"){
+//      if(count===94 )
+//  }
+
+   if(P2count1===P2count){
+        if(P2count===96){
+           div1.style.top="165px";
+           div1.style.left="540px";
+           P2count = 86;
+           P2count1= 86;
+       }
+       else if(P2count===55){
+           div1.style.top="685px";
+           div1.style.left="120px";
+           P2count = 0;
+           P2count1 = 0;
+           }
+       else if(P2count===91){
+           div1.style.top="555px";
+           div1.style.left="400px";
+           P2count = 24;
+           P2count1 = 24;
+       }
+       else if(P2count===87){
+       div1.style.top="100px";
+       div1.style.left="750px";
+       P2count = 90;
+       P2count1 = 90;
+       }
+       else if(P2count===80){
+       div1.style.top="100px";
+       div1.style.left="260px";
+       P2count = 97;
+       P2count1 = 97;
+       }
+
+       else if(P2count===82){
+           div1.style.top="425px";
+           div1.style.left="400px";
+           P2count = 44;
+           P2count1 = 44;
+       }
+       else if(P2count===72){
+           div1.style.top="165px";
+           div1.style.left="470px"; 
+           P2count = 85;
+           P2count1 = 85;
+       }
+
+       else if(P2count===59){
+       div1.style.top="555px";
+       div1.style.left="260px";
+       P2count = 22;
+       P2count1 = 22;
+
+       }
+       else if(P2count===60){
+       div1.style.top="230px";
+       div1.style.left="260px";
+       P2count = 77;
+       P2count1 = 77;
+       }
+            else if(P2count===56){
+        div1.style.top="230px";
+        div1.style.left="400px";
+        P2count =75;
+        P2count1 = 75;
+        }
+        
+       else if(P2count===50){
+           div1.style.top="685px";
+           div1.style.left="470px"; 
+           P2count = 5;
+           P2count1 = 5;
+       }
+
+       else if(P2count===53){
+           div1.style.top="490px";
+           div1.style.left="400px"; 
+           P2count = 35;
+           P2count1 = 35;
+       }
+      
+       else if(P2count===48){
+           div1.style.top="295px";
+           div1.style.left="540px"; 
+           P2count = 66;
+
+           P2count1 = 66;
+       }
+
+       else if(P2count===2){
+           div1.style.top="620px";
+           div1.style.left="120px"; 
+           P2count = 19;
+           P2count1=19;
+       }
+       else if(P2count===7){
+           div1.style.top="685px";
+           div1.style.left="330px"; 
+           P2count = 3;
+           P2count1 = 3;
+       }
+      
+       else if(P2count===89){
+           div1.style.top="425px";
+           div1.style.left="610px"; 
+           P2count = 47;
+           P2count1 = 47;
+       }
+      
+       
+       else if(P2count===10){
+               div1.style.top="555px";
+               div1.style.left="610px"; 
+               P2count = 27;
+               P2count1 = 27;
+       }
+    
+         else if(P2count===5){
+           div1.style.top="620px";
+           div1.style.left="540px"; 
+           P2count = 13;
+           P2count1 = 13;
+
+         }
+         else if(P2count===21){
+               div1.style.top="490px";
+               div1.style.left="330px"; 
+               P2count = 36;
+               P2count1 = 36;
+           }
+          
+           else if(P2count===25){
+               div1.style.top="685px";
+               div1.style.left="750px"; 
+               P2count = 9;
+               P2count1 = 9;
+           }
+           else if(P2count===16){
+               div1.style.top="230px";
+               div1.style.left="540px"; 
+               P2count = 73;
+               P2count1 = 73;
+           }
+           else if(P2count===14){
+               div1.style.top="490px";
+               div1.style.left="540px"; 
+               P2count = 33;
+               P2count1 = 33;
+           }
+           else if(P2count===37){
+           div1.style.top="360px";
+           div1.style.left="190px"; 
+           P2count = 58;
+           P2count1 = 58;
+           }
+
+           else if(P2count===84){
+           div1.style.top="360px";
+           div1.style.left="190px"; 
+           P2count = 58;
+           P2count1 = 58;
+           }
+
+           else if(P2count===38){
+           div1.style.top="685px";
+           div1.style.left="400px";
+           P2count = 4;
+           P2count1 = 4;
+           }
+
+           else if(P2count===17){
+           div1.style.top="685px";
+           div1.style.left="120px";
+           P2count = 0;
+           P2count1 = 0;
+           }
+           else if(P2count===74){
+div1.style.top="555px";
+div1.style.left="610px";
+P2count =27;
+P2count1 = 27;
+}
+
+else if(P2count===98){
+div1.style.top="295px";
+div1.style.left="260px";
+P2count =62;
+P2count1 = 62;
+}
+           
+
+           
+   }
+   if(P2count===count && count!=0){
+        console.log('P2 cuuuttttttttttttttt P1');
+div.style.top="685px";
+div.style.left="50px";
+six=0;
+count=0;
+count1=0;
+}
+},1500);
+}
+
+}
+
+console.log('}');
+if(count>=99){
+   reload++;
+}
+if(P2count>=99){
+   reload++;
+}
+
+
+        
+           }      
+
+
+
+            </script>
+    </head>
+    <body>
+            <body>
+                <body>
+                    
+                    <br><br><br><br><br><br>
+                        
+                            <button style="float:right;" onclick=rollDice()>Roll<br> Dice</button><br><br><br>
+                            <br>
+                            <div style="float:right;">
+                            <img id="dice" style="height:150px;width:150px;">
+                    </div>
+                            <!-- <input type="button" value="Move Div" onclick="MoveDiv()" />
+              -->
+                            <div id=board>
+                                            <img src="/home/com42/Desktop/Manju/413056.jpg" height="100%" width="100%";>
+                              
+                            </div>
+                            <!-- <div id="board" style="position:absolute; border:5px solid black; height:600px; width:600px;"> -->
+                                            <div id="D" style="border: 5px solid black;border-radius:50px; background-color: blue; width: 30px; height: 30px; position: absolute; top: 685px; left: 50px; right:100px;bottom:100px;"></div>
+                                            <div id="E" style="border: 5px solid black;border-radius:50px; background-color: greenyellow; width: 30px; height: 30px; position: absolute; top: 685px; left: 40px; right:100px;bottom:100px;"></div>
+    </body>
+</html>

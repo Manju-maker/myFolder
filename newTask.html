@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+   
+    </style>
+    <script>
+function myfun(){   
+   
+    for(let i =0;i<100;i++)
+    {
+    let div = document.createElement("div");
+
+    div.id=i+1;
+    div.style.width="9%";
+    div.style.height = "100px"
+    div.style.background = "yellow";
+    div.style.border="2px solid black";
+    div.style.float="left";
+    var z = 100-i;
+    var x = document.createElement("H1");
+    var y = document.createTextNode(z);
+    x.appendChild(y);
+    var di= document.body.appendChild(div);
+    di.appendChild(x);
+   
+    }
+   
+}
+let count =0;
+function randomnumberFun(){
+const num =Math.ceil(Math.random()*6);
+count=count+ num;
+console.log("randomnumber =",num,document.getElementById(count).appendChild(document.getElementById('A')));
+
+}
+
+    </script>
+    </head>
+    <body>
+            <button onclick="randomnumberFun()">Random number</button><br>
+            <button onclick="myfun()">Click</button><br><br><br><br>
+  <div id="A" style="height:25px;width:25px;margin-left: 30px;background-color: blue;border:black;margin-top:-40px;border-radius:100px;text-align:center"></div>
+        
+    </body>
+</html>
